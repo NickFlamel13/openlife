@@ -1,9 +1,7 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 
-export default class SignUp extends PureComponent {
-  render() {
-    return (
-      <div>SignUp</div>
-    )
-  }
+export default function SignUp() {
+  return (
+    <h1>SignUp</h1>
+  )
 }
