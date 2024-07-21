@@ -1,22 +1,16 @@
 import { useState } from 'react'
-import {Link} from  'react-router-dom'
+import {Link , useNavigate} from  'react-router-dom'
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setFormData({...formData, [e.target.id]: e.target.
       value });
   }
-
-  /*const handleSubmit = async (e) => {
-    e.preventDefault();
-    const res = await fetch('/api/auth/signup', formData);
-    const data = await res.json();
-    console.log(data);
-  };*/
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -34,6 +28,7 @@ export default function SignUp() {
         setError(true);
         return;
       }
+      navigate('/signin');
     } catch (error) {
       setLoading (false);
       setError(true);
