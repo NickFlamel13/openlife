@@ -110,7 +110,7 @@ export default function Profile() {
 
   return (
     <div className="p-3 max-w-lg mx-auto">
-      <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
+      <h1 className="text-3xl font-semibold text-center my-7">Welcome, {currentUser.name} {currentUser.surname} !</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
           type='file'
@@ -138,6 +138,22 @@ export default function Profile() {
             ''
           )}
         </p>
+        <input
+          defaultValue={currentUser.name}
+          type="text"
+          id="name"
+          placeholder="Name"
+          className="bg-slate-100 rounded-lg p-3"
+          onChange={handleChange}
+        />
+        <input
+          defaultValue={currentUser.surname}
+          type="text"
+          id="surname"
+          placeholder="Surname"
+          className="bg-slate-100 rounded-lg p-3"
+          onChange={handleChange}
+        />
         <input
           defaultValue={currentUser.username}
           type="text"
